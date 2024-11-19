@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Parallax } from 'react-scroll-parallax'
 import { Send } from 'lucide-react'
 
 const Contact = () => {
@@ -39,14 +40,16 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-20">
-            <motion.h2
-                className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                Contact Me
-            </motion.h2>
+            <Parallax translateY={['-50px', '50px']}>
+                <motion.h2
+                    className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-teal-400 to-blue-500 text-transparent bg-clip-text"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Lets Connect
+                </motion.h2>
+            </Parallax>
             <motion.form
                 className="max-w-lg mx-auto"
                 onSubmit={handleSubmit}
@@ -55,7 +58,7 @@ const Contact = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
                 <div className="mb-6">
-                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-300">
+                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                         Name
                     </label>
                     <input
@@ -65,11 +68,11 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2 text-gray-300 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full px-3 py-2 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">
+                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                         Email
                     </label>
                     <input
@@ -79,11 +82,11 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-3 py-2 text-gray-300 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full px-3 py-2 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-300">
+                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                         Message
                     </label>
                     <textarea
@@ -93,16 +96,18 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         rows={4}
-                        className="w-full px-3 py-2 text-gray-300 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full px-3 py-2 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
                     ></textarea>
                 </div>
-                <button
+                <motion.button
                     type="submit"
-                    className="w-full px-4 py-2 text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center"
+                    className="w-full px-4 py-2 text-white bg-gradient-to-r from-teal-400 to-blue-500 rounded-lg hover:from-teal-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-teal-400 flex items-center justify-center"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                 >
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
-                </button>
+                </motion.button>
             </motion.form>
         </section>
     )
