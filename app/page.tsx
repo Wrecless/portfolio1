@@ -1,48 +1,48 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ParallaxProvider } from 'react-scroll-parallax'
-import { Moon, Sun } from 'lucide-react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Achievements from './components/Achievements'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Moon, Sun } from 'lucide-react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Achievements from './components/Achievements';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+const sections = ['hero', 'about', 'projects', 'skills', 'achievements', 'contact'];
 
 export default function Portfolio() {
-    const [activeSection, setActiveSection] = useState('hero')
-    const [scrollY, setScrollY] = useState(0)
-    const [darkMode, setDarkMode] = useState(true)
+    const [activeSection, setActiveSection] = useState('hero');
+    const [scrollY, setScrollY] = useState(0);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollY(window.scrollY)
-        }
+            setScrollY(window.scrollY);
+        };
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
-
-    const sections = ['hero', 'about', 'projects', 'skills', 'achievements', 'contact']
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(() => {
-        const sectionElements = sections.map(section => document.getElementById(section))
+        const sectionElements = sections.map((section) => document.getElementById(section));
         const currentSection = sectionElements.findIndex(
-            el => el && el.offsetTop <= scrollY + window.innerHeight / 3
-        )
+            (el) => el && el.offsetTop <= scrollY + window.innerHeight / 3
+        );
         if (currentSection !== -1) {
-            setActiveSection(sections[currentSection])
+            setActiveSection(sections[currentSection]);
         }
-    }, [scrollY])
+    }, [scrollY]);
 
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode)
-        document.documentElement.classList.toggle('dark')
-    }
+        setDarkMode(!darkMode);
+        document.documentElement.classList.toggle('dark');
+    };
 
     return (
         <ParallaxProvider>
@@ -78,5 +78,5 @@ export default function Portfolio() {
                 </div>
             </div>
         </ParallaxProvider>
-    )
+    );
 }

@@ -14,7 +14,7 @@ const Hero = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <Image
-                            src="/placeholder.svg?height=400&width=400"
+                            src="/lol.jpg"
                             alt="Bruno Mata"
                             width={400}
                             height={400}
