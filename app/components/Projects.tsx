@@ -4,20 +4,20 @@ import { ExternalLink, Github } from 'lucide-react'
 
 const projects = [
     {
-        title: 'AI-Powered Task Manager',
-        description: 'A smart task management application that uses machine learning to prioritize and categorize tasks.',
+        title: 'Wrekify - Music sharing & streaming platform',
+        description: 'Spotify clone with social features, music streaming, and collaborative playlists.',
         image: '/placeholder.svg?height=300&width=400',
         github: 'https://github.com/brunomata/ai-task-manager',
         demo: 'https://ai-task-manager-demo.com',
-        tags: ['React', 'Node.js', 'TensorFlow.js', 'MongoDB'],
+        tags: ['Next.js', 'Tailwind Css', 'Supabase'],
     },
     {
-        title: 'Blockchain Voting System',
-        description: 'A secure and transparent voting system built on blockchain technology for organizational elections.',
-        image: '/placeholder.svg?height=300&width=400',
-        github: 'https://github.com/brunomata/blockchain-voting',
-        demo: 'https://blockchain-voting-demo.com',
-        tags: ['Solidity', 'Ethereum', 'Web3.js', 'React'],
+        title: 'Soul Support - Mental health Self Help',
+        description: 'Mental health app that provides self-help tools and resources for mental health.',
+        image: '/Soul.png',
+        github: 'https://github.com/Wrecless/soul',
+        demo: 'https://soulsupport.vercel.app/',
+        tags: ['Next.js', 'Tailwind Css', 'Youtube'],
     },
     {
         title: 'Eco-Friendly IoT Home',

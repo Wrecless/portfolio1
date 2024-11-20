@@ -14,7 +14,7 @@ const Hero = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <Image
-                            src="/lol.jpg"
+                            src="/me.jpg"
                             alt="Bruno Mata"
                             width={400}
                             height={400}
@@ -32,7 +32,7 @@ const Hero = () => {
                             Hi, I am Bruno Mata
                         </h2>
                         <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-                            Full-Stack Developer & Digital Innovator
+                            Software Engineer and Full-Stack Developer
                         </h3>
                         <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">
                             BSc (Hons) Computer Science graduate with First Class Honours and an award for Digital Innovation.
